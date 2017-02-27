@@ -125,6 +125,7 @@ header {
 
 body.show header {
   animation: showHeader 600ms ease;
+  animation-fill-mode: forwards;
 }
 
 /*
