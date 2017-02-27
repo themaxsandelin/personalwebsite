@@ -1,7 +1,0 @@
-server_name:
-    host: "ftp.myserver.com"
-    user: "user"
-    pass: "password"
-    path:
-        local: "deploy/"
-        remote: "public_html/"
