@@ -1,0 +1,1 @@
+"use strict";document.addEventListener("DOMContentLoaded",function(){for(var e=document.querySelectorAll("header .menu li"),t=0;t<e.length;t++)e[t].addEventListener("click",function(e){var t=e.target.innerText.toLowerCase();Velocity(document.getElementById(t),"scroll",600)})}),window.addEventListener("load",function(){document.body.classList.add("show")});

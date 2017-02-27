@@ -1,0 +1,437 @@
+/*
+-------------------- 
+  General
+--------------------
+*/
+
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 0 30px;
+  color: #141414;
+}
+
+.main {
+  width: 100%;
+  max-width: 960px;
+}
+
+section {
+  width: 100%;
+  float: left;
+  opacity: 0;
+
+  h4 {
+    margin: 25px 0 13px 0;
+  }
+}
+
+/*
+-------------------- 
+  Typography
+--------------------
+*/
+
+h1 {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+h4 {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(20, 20, 20, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+p > a {
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+  color: #141414;
+}
+
+p > a.border:before {
+  content: '';
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  background: #F15656;
+}
+
+p.large {
+  font-size: 19px;
+  line-height: 34px;
+}
+
+/*
+-------------------- 
+  Header & menu
+--------------------
+*/
+
+header {
+  width: 100%;
+  padding: 90px 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ul.menu {
+    margin: 20px 0 0 0;
+    user-select: none;
+    cursor: default;
+
+    li {
+      display: inline-block;
+      font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-indent: 2px;
+      text-transform: uppercase;
+      color: rgba(20, 20, 20, 0.35);
+      margin: 0 12px;
+      cursor: pointer;
+      
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #F15656;
+      }
+    }
+  }
+}
+
+body.show header {
+  animation: showHeader 600ms ease;
+}
+
+/*
+-------------------- 
+  Hero image
+--------------------
+*/
+
+.hero {
+  width: 100%;
+  position: relative;
+  opacity: 0;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  img {
+    width: 100%;
+    float: left;
+  }
+}
+
+body.show .hero {
+  animation: show 0.6s ease;
+  animation-fill-mode: forwards;
+}
+
+/*
+-------------------- 
+  About section
+--------------------
+*/
+
+body.show section#about {
+  animation: show 600ms ease;
+  animation-delay: 300ms;
+  animation-fill-mode: forwards;
+}
+
+/*
+-------------------- 
+  Work section
+--------------------
+*/
+
+section#work {
+  margin: 75px 0 0 0;
+}
+
+body.show section#work {
+  animation: show 0.6s ease;
+  animation-delay: 600ms;
+  animation-fill-mode: forwards;
+}
+
+ul.projects {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    width: 50%;
+    float: left;
+    margin: 0 0 45px 0;
+    padding: 0 30px 0 0;
+
+    &:nth-child(2n) {
+      padding: 0 0 0 30px;
+    }
+
+    li {
+      width: 100%;
+      float: left;
+      position: relative;
+
+      &:hover h2 {
+        color: #F15656;
+      }
+
+      &:hover h2:before {
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px);
+      }
+
+      h2 {
+        width: auto;
+        float: left;
+        position: relative;
+        color: #141414;
+        
+        transition: color 0.2s ease;
+
+        &:before {
+          content: '';
+          width: 7px;
+          height: 12px;
+          background: url(../arrow.svg) no-repeat center;
+          background-size: 7px 12px;
+          position: absolute;
+          right: -14px;
+          bottom: 8px;
+          opacity: 0;
+          transform: translate3d(-5px, 0px, 0px);
+          
+          transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+      }
+
+      p {
+        width: 100%;
+        float: left;
+        color: rgba(20, 20, 20, 0.6);
+        margin: 10px 0 0 0;
+      }
+    }
+  }
+}
+
+blockquote {
+  width: 100%;
+  float: left;
+  line-height: 24px;
+  font-size: 16px;
+  color: rgba(20, 20, 20, 0.6);
+  border-left: 3px solid #ddd;
+  padding: 0 0 0 15px;
+  
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/*
+-------------------- 
+  Contact section
+--------------------
+*/
+
+section#contact {
+  margin: 95px 0 0 0;
+
+  p.large a.twitter {
+    color: #1DA1F2;
+  }
+
+  p.large a.facebook {
+    color: #3B5998;
+  }
+
+  p.large a.instagram {
+    color: #833AB4;
+  }
+
+  p.large a.linkedin {
+    color: #0077B5;
+  }
+
+  p.large a.dribbble {
+    color: #EA4C89;
+  }
+}
+
+body.show section#contact {
+  animation: show 600ms ease;
+  animation-delay: 900ms;
+  animation-fill-mode: forwards;
+}
+
+/*
+-------------------- 
+  Footer
+--------------------
+*/
+
+footer {
+  width: 100%;
+  float: left;
+  padding: 100px 0;
+  line-height: 28px;
+  font-size: 16px;
+  color: rgba(20, 20, 20, 0.6);
+  text-align: center;
+  opacity: 0;
+}
+
+body.show footer {
+  animation: show 600ms ease;
+  animation-delay: 1200ms;
+  animation-fill-mode: forwards;
+}
+
+/*
+-------------------- 
+  Responsiveness
+--------------------
+*/
+
+@media only screen and (max-width: 768px) {
+  
+  .hero {
+    height: 350px;
+  }
+  
+}
+
+@media only screen and (max-width: 650px) {
+  
+  .hero {
+    height: 300px;
+  }
+  
+}
+
+@media only screen and (max-width: 600px) {
+  
+  body {
+    padding: 0 20px;
+  }
+  
+  header,
+  footer {
+    padding: 60px 0;
+  }
+  
+  ul.projects a {
+    width: 100%;
+    padding: 0;
+  }
+  
+  ul.projects a:nth-child(2n) {
+    padding: 0;
+  }
+  
+  section#work {
+    margin: 50px 0 0 0;
+  }
+  
+  section#contact {
+    margin: 60px 0 0 0;
+  }
+  
+  section#contact p.large:last-of-type {
+    margin: 15px 0 0 0;
+  }
+  
+}
+
+@media only screen and (max-width: 550px) {
+  
+  .hero {
+    height: 250px;
+  }
+  
+}
+
+@media only screen and (max-width: 450px) {
+  
+  .hero {
+    height: 200px;
+  }
+  
+}
+
+@media only screen and (max-width: 350px) {
+  
+  body {
+    padding: 0 15px;
+  }
+  
+  .hero {
+    height: 150px;
+  }
+  
+}
+
+/*
+-------------------- 
+  Header animation
+--------------------
+*/
+
+@keyframes showHeader {
+  0% {
+    transform: translate3d(0px, -15px, 0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+/*
+-------------------- 
+  Content animation
+--------------------
+*/
+
+@keyframes show {
+  0% {
+    transform: translate3d(0px, 15px, 0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
