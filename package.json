@@ -14,6 +14,7 @@
   "author": "Max Sandelin",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.6.2",
     "express": "^4.14.1"
   },
   "devDependencies": {
