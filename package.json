@@ -4,8 +4,7 @@
   "description": "My personal website running on Node.js",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js",
-    "start": "node server.js"
+    "site": "node server.js"
   },
   "keywords": [
     "personal",
