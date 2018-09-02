@@ -1,24 +1,27 @@
 {
-  "name": "personal",
-  "version": "1.0.0",
-  "description": "My personal website running on Node.js",
-  "main": "server.js",
-  "scripts": {
-    "site": "node server.js"
+  "name": "maxsandelin",
+  "version": "1.2.1",
+  "description": "My personal website.",
+  "author": {
+    "name": "Max Sandelin",
+    "email": "max@maxsandelin.com",
+    "url": "maxsandelin.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/themaxsandelin/personalwebsite"
   },
   "keywords": [
     "personal",
-    "website"
+    "website",
+    "portfolio",
+    "html",
+    "css",
+    "javascript"
   ],
-  "author": "Max Sandelin",
-  "license": "ISC",
-  "dependencies": {
-    "compression": "^1.6.2",
-    "express": "^4.14.1"
-  },
   "devDependencies": {
     "babel-preset-es2015": "^6.22.0",
-    "browser-sync": "^2.18.8",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",

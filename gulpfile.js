@@ -1,18 +1,19 @@
 const gulp = require('gulp');
+
 const sass = require('gulp-sass');
 const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
+
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
-const browserSync = require('browser-sync');
 
-gulp.task('javascript', () => {
-  return gulp.src('./src/javascript/max.js')
+gulp.task('js', () => {
+  return gulp.src('./src/js/max.js')
     .pipe(babel({
       presets: ['es2015']
     }))
     .pipe(uglify())
-    .pipe(gulp.dest('./public/javascript'));
+    .pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('sass', () => {
@@ -29,13 +30,8 @@ gulp.task('sass', () => {
 
 gulp.task('watch', () => {
   gulp.watch(['./src/sass/max.scss', './src/sass/max.scss'], ['sass']);
-  gulp.watch('./src/javascript/max.js', ['javascript']);
+  gulp.watch('./src/js/max.js', ['js']);
 });
 
-gulp.task('browser-sync', () => {
-  browserSync.init({
-    proxy: 'localhost:8080'
-  });
-});
-
-gulp.task('default', ['javascript', 'sass', 'watch', 'browser-sync']);
+gulp.task('dev', ['js', 'sass', 'watch']);
+gulp.task('default', ['js', 'sass']);
